@@ -1,35 +1,29 @@
+{% extends 'meetups/base/base.html' %}
 {% load static %}
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href=" {% static 'meetups/styles/base.css' %} ">
-    <link rel="stylesheet" href=" {% static 'meetups/styles/meetup-detail.css' %} ">
-    <title> {{ meetups_title }} </title>
 
-</head>
-<body>
-    <main>
-        <article>
-            <img src="" alt="">
-            <section id="location">
-                <h2>Meetups location</h2>
-                <address>This meetups takes place in <span>LOCATION</span> <div class="">ADDRESS</div></address>    
-            </section>
-            <section id="details">
-                <h2>What's the meetup about?</h2>
-                <p>{{ meetups_description }}</p>
-                <footer>
-                    <p>Need more details? Please <a href="">contact the organizer</a> (don't spam us) </p>
-                </footer>
-            </section>
-            <section id="registration">
-                <h2>Join us!</h2>
-                FORM
-            </section>
-        </article>
-    </main>
-</body>
-</html>
+{% block title %} {{ meetups_title}} {% endblock title %} 
+
+{% block site_css %}  
+    <link rel="stylesheet" href=" {% static './meetups/styles/meetup-detail.css' %} "> 
+{% endblock site_css %} 
+ 
+{% block body %}
+    <article>
+        <img src="" alt="">
+        <section id="location">
+            <h2>Meetups location</h2>
+            <address>This meetups takes place in <span>LOCATION</span> <div class="">ADDRESS</div></address>    
+        </section>
+        <section id="details">
+            <h2>What's the meetup about?</h2>
+            <p>{{ meetups_description }}</p>
+            <footer>
+                <p>Need more details? Please <a href="">contact the organizer</a> (don't spam us) </p>
+            </footer>
+        </section>
+        <section id="registration">
+            <h2>Join us!</h2>
+            FORM
+        </section>
+    </article>
+{% endblock body %}
